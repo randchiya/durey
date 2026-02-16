@@ -68,7 +68,7 @@ jobs:
         cd ..
         
     - name: Upload IPA Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: DuRey-IPA
         path: ios/build/*.ipa
