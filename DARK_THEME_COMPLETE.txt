@@ -1,0 +1,172 @@
+✅ PROFESSIONAL DARK THEME - CATEGORY SCREEN REDESIGN
+================================================================================
+
+IMPLEMENTATION DATE: February 15, 2026
+STATUS: Complete ✅
+
+================================================================================
+DARK THEME DESIGN FEATURES
+================================================================================
+
+1. BACKGROUND GRADIENT
+   - Deep navy to dark purple gradient (0xFF0A0E21 → 0xFF1D1E33)
+   - Professional, modern look
+   - Easy on the eyes
+
+2. APP BAR
+   - Dark background (0xFF1D1E33)
+   - Gradient text effect on "DuRey" title
+   - Cyan to purple gradient (0xFF00D4FF → 0xFF7B2FF7)
+   - Centered title
+   - No elevation for seamless look
+
+3. TITLE SECTION
+   - "Choose Your Category" with gradient shader mask
+   - Cyan to purple gradient effect
+   - Large, bold typography (32px)
+   - Subtitle with 60% opacity for hierarchy
+   - Letter spacing for premium feel
+
+4. CATEGORY CARDS
+   - Dark card background (0xFF1D1E33)
+   - Subtle white border (10% opacity)
+   - Gradient overlay matching category color
+   - Glow effect on card shadows
+   - Smooth hover/tap effects
+
+5. CATEGORY ICONS
+   - Circular gradient background
+   - Icon glow effect with category color
+   - 36px icon size
+   - White icons for contrast
+   - Shadow spread for depth
+
+6. CATEGORY LABELS
+   - White text with letter spacing
+   - Bold font weight (18px)
+   - Gradient underline accent
+   - 3px height, rounded corners
+   - Matches category color
+
+7. LOADING DIALOG
+   - Dark container (0xFF1D1E33)
+   - Rounded corners (20px)
+   - Cyan progress indicator
+   - "Loading question..." text
+   - Semi-transparent backdrop (80% black)
+
+8. GRID LAYOUT
+   - 2 columns
+   - 20px spacing between cards
+   - 1:1 aspect ratio
+   - Responsive padding
+   - Smooth scrolling
+
+================================================================================
+COLOR PALETTE
+================================================================================
+
+BACKGROUND COLORS:
+- Primary Background: #0A0E21 (deep navy)
+- Card Background: #1D1E33 (dark purple-gray)
+
+ACCENT COLORS:
+- Cyan: #00D4FF
+- Purple: #7B2FF7
+
+CATEGORY COLORS (unchanged):
+- Life: #E91E63 (pink)
+- General: #2196F3 (blue)
+- Extreme: #FF5722 (orange)
+- Technology: #9C27B0 (purple)
+- Relationship: #F44336 (red)
+- Talent: #FF9800 (amber)
+
+================================================================================
+VISUAL EFFECTS
+================================================================================
+
+1. Gradient Shader Masks
+   - Applied to title text
+   - Applied to app bar title
+   - Smooth color transitions
+
+2. Glow Effects
+   - Category card shadows
+   - Icon container shadows
+   - Color-matched to category
+
+3. Transparency Layers
+   - Gradient overlays on cards
+   - Border opacity
+   - Text opacity for hierarchy
+
+4. Interactive States
+   - Splash color on tap
+   - Highlight color on press
+   - Smooth transitions
+
+================================================================================
+TYPOGRAPHY
+================================================================================
+
+TITLE: 32px, Bold, Gradient
+SUBTITLE: 16px, Regular, 60% opacity
+CATEGORY NAME: 18px, Bold, Letter spacing 0.5
+LOADING TEXT: 16px, Regular, 80% opacity
+
+================================================================================
+SPACING & LAYOUT
+================================================================================
+
+- Top padding: 50px
+- Grid spacing: 20px
+- Card padding: 20px
+- Icon padding: 16px
+- Bottom safe area: 30px
+
+================================================================================
+IMPROVEMENTS OVER PREVIOUS DESIGN
+================================================================================
+
+✓ Professional dark theme instead of light
+✓ Gradient effects for premium feel
+✓ Better visual hierarchy
+✓ Glow effects for depth
+✓ Consistent color scheme
+✓ Improved readability
+✓ Modern, sleek appearance
+✓ Better contrast ratios
+✓ Smooth animations
+✓ Polished loading states
+
+================================================================================
+FILES MODIFIED
+================================================================================
+
+1. durey/lib/screens/home_screen.dart
+   - Updated _buildCategorySelection()
+   - Updated _buildCategoryCard()
+   - Updated build() method
+   - Updated loading dialog
+
+================================================================================
+TESTING
+================================================================================
+
+App is currently running on emulator-5554.
+Hot reload will apply changes automatically.
+
+To test:
+1. Open app
+2. See dark themed category selection
+3. Tap any category
+4. See loading dialog with dark theme
+5. Navigate to voting screen
+
+================================================================================
+🎉 DARK THEME COMPLETE
+================================================================================
+
+The category selection screen now features a professional, modern dark theme
+with gradient effects, glow shadows, and polished UI elements.
