@@ -35,13 +35,15 @@ jobs:
         pod install
         cd ..
         
-    - name: Import Code-Signing Certificates
+    - name: Import Code-Signing Certificates (Optional)
+      if: ${{ secrets.IOS_CERTIFICATE_P12 != '' }}
       uses: Apple-Actions/import-codesign-certs@v2
       with:
         p12-file-base64: ${{ secrets.IOS_CERTIFICATE_P12 }}
         p12-password: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
         
-    - name: Download Provisioning Profile
+    - name: Download Provisioning Profile (Optional)
+      if: ${{ secrets.IOS_PROVISIONING_PROFILE != '' }}
       run: |
         mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
         echo "${{ secrets.IOS_PROVISIONING_PROFILE }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
@@ -50,7 +52,8 @@ jobs:
       run: |
         flutter build ios --release --no-codesign
         
-    - name: Build IPA
+    - name: Create IPA (if certificates available)
+      if: ${{ secrets.IOS_CERTIFICATE_P12 != '' }}
       run: |
         cd ios
         xcodebuild -workspace Runner.xcworkspace \
@@ -67,11 +70,20 @@ jobs:
           -allowProvisioningUpdates
         cd ..
         
-    - name: Upload IPA Artifact
+    - name: Upload IPA Artifact (if available)
+      if: ${{ secrets.IOS_CERTIFICATE_P12 != '' }}
       uses: actions/upload-artifact@v4
       with:
         name: DuRey-IPA
         path: ios/build/*.ipa
+        retention-days: 30
+        
+    - name: Upload .app Bundle (unsigned)
+      if: ${{ secrets.IOS_CERTIFICATE_P12 == '' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: DuRey-App-Unsigned
+        path: build/ios/iphoneos/Runner.app
         retention-days: 30
         
     - name: Create Release
